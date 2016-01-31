@@ -1,0 +1,18 @@
+C:\Users\DVDLesher\Downloads\PictureBox Zoom\PictureBox Zoom\bin\Debug\PictureBox Zoom.exe
+C:\Users\DVDLesher\Downloads\PictureBox Zoom\PictureBox Zoom\bin\Debug\PictureBox Zoom.pdb
+C:\Users\DVDLesher\Downloads\PictureBox Zoom\PictureBox Zoom\obj\Debug\PictureBox Zoom.csprojResolveAssemblyReference.cache
+C:\Users\DVDLesher\Downloads\PictureBox Zoom\PictureBox Zoom\obj\Debug\PictureBox_Zoom.MainForm.resources
+C:\Users\DVDLesher\Downloads\PictureBox Zoom\PictureBox Zoom\obj\Debug\PictureBox_Zoom.Properties.Resources.resources
+C:\Users\DVDLesher\Downloads\PictureBox Zoom\PictureBox Zoom\obj\Debug\PictureBox Zoom.csproj.GenerateResource.Cache
+C:\Users\DVDLesher\Downloads\PictureBox Zoom\PictureBox Zoom\obj\Debug\PictureBox Zoom.exe
+C:\Users\DVDLesher\Downloads\PictureBox Zoom\PictureBox Zoom\obj\Debug\PictureBox Zoom.pdb
+C:\Users\DVDLesher\Downloads\PictureBox Zoom\PictureBox Zoom\bin\Debug\PictureBox Zoom.exe.config
+D:\!My_Proj\IDV\picturebox zoom\PictureBox Zoom\bin\Debug\PictureBox Zoom.exe.config
+D:\!My_Proj\IDV\picturebox zoom\PictureBox Zoom\obj\Debug\PictureBox Zoom.exe
+D:\!My_Proj\IDV\picturebox zoom\PictureBox Zoom\obj\Debug\PictureBox Zoom.pdb
+D:\!My_Proj\IDV\picturebox zoom\PictureBox Zoom\bin\Debug\PictureBox Zoom.exe
+D:\!My_Proj\IDV\picturebox zoom\PictureBox Zoom\bin\Debug\PictureBox Zoom.pdb
+D:\!My_Proj\IDV\picturebox zoom\PictureBox Zoom\obj\Debug\PictureBox Zoom.csprojResolveAssemblyReference.cache
+D:\!My_Proj\IDV\picturebox zoom\PictureBox Zoom\obj\Debug\PictureBox_Zoom.MainForm.resources
+D:\!My_Proj\IDV\picturebox zoom\PictureBox Zoom\obj\Debug\PictureBox_Zoom.Properties.Resources.resources
+D:\!My_Proj\IDV\picturebox zoom\PictureBox Zoom\obj\Debug\PictureBox Zoom.csproj.GenerateResource.Cache

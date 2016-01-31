@@ -1,0 +1,27 @@
+C:\Users\DVDLesher\Documents\Visual Studio 2012\Projects\ImageDualViewer\ImageDualViewer\bin\Debug\ImageDualViewer.exe.config
+C:\Users\DVDLesher\Documents\Visual Studio 2012\Projects\ImageDualViewer\ImageDualViewer\bin\Debug\ImageDualViewer.exe
+C:\Users\DVDLesher\Documents\Visual Studio 2012\Projects\ImageDualViewer\ImageDualViewer\bin\Debug\ImageDualViewer.pdb
+C:\Users\DVDLesher\Documents\Visual Studio 2012\Projects\ImageDualViewer\ImageDualViewer\obj\Debug\ImageDualViewer.csprojResolveAssemblyReference.cache
+C:\Users\DVDLesher\Documents\Visual Studio 2012\Projects\ImageDualViewer\ImageDualViewer\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\DVDLesher\Documents\Visual Studio 2012\Projects\ImageDualViewer\ImageDualViewer\obj\Debug\ImageDualViewer.Properties.Resources.resources
+C:\Users\DVDLesher\Documents\Visual Studio 2012\Projects\ImageDualViewer\ImageDualViewer\obj\Debug\ImageDualViewer.csproj.GenerateResource.Cache
+C:\Users\DVDLesher\Documents\Visual Studio 2012\Projects\ImageDualViewer\ImageDualViewer\obj\Debug\ImageDualViewer.exe
+C:\Users\DVDLesher\Documents\Visual Studio 2012\Projects\ImageDualViewer\ImageDualViewer\obj\Debug\ImageDualViewer.pdb
+D:\!My_Proj\IDV\ImageDualViewer\bin\Debug\ImageDualViewer.exe.config
+D:\!My_Proj\IDV\ImageDualViewer\obj\Debug\ImageDualViewer.exe
+D:\!My_Proj\IDV\ImageDualViewer\obj\Debug\ImageDualViewer.pdb
+D:\!My_Proj\IDV\ImageDualViewer\bin\Debug\ImageDualViewer.exe
+D:\!My_Proj\IDV\ImageDualViewer\bin\Debug\ImageDualViewer.pdb
+D:\!My_Proj\IDV\ImageDualViewer\obj\Debug\ImageDualViewer.csprojResolveAssemblyReference.cache
+D:\!My_Proj\IDV\ImageDualViewer\obj\Debug\WindowsFormsApplication1.Form1.resources
+D:\!My_Proj\IDV\ImageDualViewer\obj\Debug\ImageDualViewer.Properties.Resources.resources
+D:\!My_Proj\IDV\ImageDualViewer\obj\Debug\ImageDualViewer.csproj.GenerateResource.Cache
+C:\Users\DVDLesher\Dropbox\Private\Visual Studio Projects\IDV\ImageDualViewer\bin\Debug\ImageDualViewer.exe.config
+C:\Users\DVDLesher\Dropbox\Private\Visual Studio Projects\IDV\ImageDualViewer\obj\Debug\ImageDualViewer.exe
+C:\Users\DVDLesher\Dropbox\Private\Visual Studio Projects\IDV\ImageDualViewer\obj\Debug\ImageDualViewer.pdb
+C:\Users\DVDLesher\Dropbox\Private\Visual Studio Projects\IDV\ImageDualViewer\bin\Debug\ImageDualViewer.exe
+C:\Users\DVDLesher\Dropbox\Private\Visual Studio Projects\IDV\ImageDualViewer\bin\Debug\ImageDualViewer.pdb
+C:\Users\DVDLesher\Dropbox\Private\Visual Studio Projects\IDV\ImageDualViewer\obj\Debug\ImageDualViewer.csprojResolveAssemblyReference.cache
+C:\Users\DVDLesher\Dropbox\Private\Visual Studio Projects\IDV\ImageDualViewer\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\DVDLesher\Dropbox\Private\Visual Studio Projects\IDV\ImageDualViewer\obj\Debug\ImageDualViewer.Properties.Resources.resources
+C:\Users\DVDLesher\Dropbox\Private\Visual Studio Projects\IDV\ImageDualViewer\obj\Debug\ImageDualViewer.csproj.GenerateResource.Cache
