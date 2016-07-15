@@ -25,3 +25,12 @@ C:\Users\DVDLesher\Dropbox\Private\Visual Studio Projects\IDV\ImageDualViewer\ob
 C:\Users\DVDLesher\Dropbox\Private\Visual Studio Projects\IDV\ImageDualViewer\obj\Debug\WindowsFormsApplication1.Form1.resources
 C:\Users\DVDLesher\Dropbox\Private\Visual Studio Projects\IDV\ImageDualViewer\obj\Debug\ImageDualViewer.Properties.Resources.resources
 C:\Users\DVDLesher\Dropbox\Private\Visual Studio Projects\IDV\ImageDualViewer\obj\Debug\ImageDualViewer.csproj.GenerateResource.Cache
+C:\Users\DVDLesher\Documents\GitHub\Image-Dual-Viewer\ImageDualViewer\bin\Debug\ImageDualViewer.exe.config
+C:\Users\DVDLesher\Documents\GitHub\Image-Dual-Viewer\ImageDualViewer\bin\Debug\ImageDualViewer.exe
+C:\Users\DVDLesher\Documents\GitHub\Image-Dual-Viewer\ImageDualViewer\bin\Debug\ImageDualViewer.pdb
+C:\Users\DVDLesher\Documents\GitHub\Image-Dual-Viewer\ImageDualViewer\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\DVDLesher\Documents\GitHub\Image-Dual-Viewer\ImageDualViewer\obj\Debug\ImageDualViewer.Properties.Resources.resources
+C:\Users\DVDLesher\Documents\GitHub\Image-Dual-Viewer\ImageDualViewer\obj\Debug\ImageDualViewer.csproj.GenerateResource.Cache
+C:\Users\DVDLesher\Documents\GitHub\Image-Dual-Viewer\ImageDualViewer\obj\Debug\ImageDualViewer.exe
+C:\Users\DVDLesher\Documents\GitHub\Image-Dual-Viewer\ImageDualViewer\obj\Debug\ImageDualViewer.pdb
+C:\Users\DVDLesher\Documents\GitHub\Image-Dual-Viewer\ImageDualViewer\obj\Debug\ImageDualViewer.csprojResolveAssemblyReference.cache

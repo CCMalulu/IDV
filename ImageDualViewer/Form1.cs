@@ -9,33 +9,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace WindowsFormsApplication1
 {
-
-    /* Currently missing feature:
-     * - Zoom by Click (temporary zoom)
-     * - Mouse Wheel Zoom (permanent zoom until next page)
-     */
-
-    /* Currently incomplete feature:
-     * - Independent scroll either by checkbox (done) or SHIFT KEY (missing)
-     */
 
     public partial class Form1 : Form
     {
 
         //////////////////////////////////////////////////////////////////////////////
-        // Variables and shits
+        // Variables and stuff
         //////////////////////////////////////////////////////////////////////////////
 
-        private string supportedExtensions = "*.jpg,*.gif,*.png,*.bmp,*.jpe,*.jpeg,*.wmf,*.emf,*.xbm,*.ico,*.eps,*.tif,*.tiff,*.g01,*.g02,*.g03,*.g04,*.g05,*.g06,*.g07,*.g08";
+        private string supportedExtensions = "*.jpg;*.gif;*.png;*.bmp;*.jpe;*.jpeg;*.tif;*.tiff";
         //private int flagBegin = 1;
+        public string curDir = Directory.GetCurrentDirectory();
         
         public List<int> indexList = new List<int>(); 
         public List<List<String>> imageList = new List<List<string>>();
         public List<OpenFileDialog> fileDialogList = new List<OpenFileDialog>();
-        public List<FolderBrowserDialog> folderDialogList = new List<FolderBrowserDialog>();
         public int mouseIsOnPicBoxNumber;
 
         public Form1()
@@ -164,7 +157,7 @@ namespace WindowsFormsApplication1
                 case 2:
                     targetSize = new Size(this.Width / 2 - 20, this.Height - 100);
                     pictureBox1.Location = new Point(10, 10);
-                    pictureBox2.Location = new Point(this.Width / 2 + 10, 10);
+                    pictureBox2.Location = new Point(this.Width / 2, 10);
                     pictureBox1.Size = targetSize;
                     pictureBox2.Size = targetSize;
 
@@ -173,7 +166,7 @@ namespace WindowsFormsApplication1
                     pictureBox4.Visible = false;
 
                     label1.Location = new Point(10, 10);
-                    label2.Location = new Point(this.Width / 2 + 10, 10);
+                    label2.Location = new Point(this.Width / 2, 10);
 
                     label2.Visible = true;
                     label3.Visible = false;
@@ -229,12 +222,13 @@ namespace WindowsFormsApplication1
 
             }
 
-            specLabel1.Location = new Point(20, this.Height - 80);
-            fileButton.Location = new Point(200, this.Height - 65 - fileButton.Height);
-            folderButton.Location = new Point(200, this.Height - 65);
-
-            specLabel2.Location = new Point(this.Width/2 + 20, this.Height - 80);
-            comboBox1.Location = new Point(this.Width/2 + 150, this.Height - 80);
+            lineLabel.Size = new Size(this.Width, 1);
+            lineLabel.Location = new Point(0, this.Height - 89);
+            fileButton.Location = new Point(12, this.Height - 54 - fileButton.Height);
+            saveButton.Location = new Point(24 + fileButton.Width, this.Height - 43 - fileButton.Height);
+            loadButton.Location = new Point(24 + fileButton.Width, this.Height - 65 - fileButton.Height);
+            specLabel2.Location = new Point(this.Width / 2 + 20, this.Height - 80);
+            comboBox1.Location = new Point(this.Width / 2 + 150, this.Height - 80);
             checkBox1.Location = new Point(this.Width / 2 + 150, this.Height - 55);
         }
 
@@ -323,21 +317,6 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            // Add/Remove folderDialogList
-            if (folderDialogList.Count > (int)comboBox1.SelectedItem)
-            {
-                while (folderDialogList.Count != (int)comboBox1.SelectedItem)
-                {
-                    folderDialogList.RemoveAt(folderDialogList.Count() - 1);
-                }
-            }
-            else if (folderDialogList.Count < (int)comboBox1.SelectedItem)
-            {
-                while (folderDialogList.Count != (int)comboBox1.SelectedItem)
-                {
-                    folderDialogList.Add(new FolderBrowserDialog());
-                }
-            }
             scaleResize();
             updateImages("heh");
         }
@@ -346,8 +325,27 @@ namespace WindowsFormsApplication1
         {
             for (int i = 0; i < (int)comboBox1.SelectedItem; i++)
             {
+                // Set title of dialog
+                if (i % 2 == 0)
+                {
+                    fileDialogList[i].Title = "Select images for left viewer";
+                }
+                else
+                {
+                    fileDialogList[i].Title = "Select images for right viewer";
+                }
+                fileDialogList[i].Filter = "Images|"+supportedExtensions;
+
+                // Enable multiple select
                 fileDialogList[i].Multiselect = true;
-                fileDialogList[i].ShowDialog();
+
+                // If the file dialog is cancelled midway, cancel the whole process
+                if (fileDialogList[i].ShowDialog() == DialogResult.Cancel )
+                {
+                	break;
+                }
+
+                //Empty the list before processing starts
                 imageList[i].RemoveRange(0, imageList[i].Count);
 
                 // Pre-processing 1st selection
@@ -359,30 +357,6 @@ namespace WindowsFormsApplication1
                 indexList[i] = 0;
             }
             updateImages("One of the file selection has no file selected!");
-        }
-
-        private void folderButton_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < (int)comboBox1.SelectedItem; i++)
-            {
-                folderDialogList[i].ShowDialog();
-                imageList[i].RemoveRange(0, imageList[i].Count);
-
-                // Filtering 1st folder selection
-                try
-                {
-                    foreach (string imageFile in System.IO.Directory.GetFiles(folderDialogList[i].SelectedPath, "*.*", System.IO.SearchOption.AllDirectories).Where(s => supportedExtensions.Contains(System.IO.Path.GetExtension(s).ToLower())))
-                    {
-                        imageList[i].Add(imageFile);
-                    }
-                }
-                catch
-                { }
-
-                indexList[i] = 0;
-            }
-
-            updateImages("One of the folder selection has no folder selected!");
         }
 
         private void Form1_FormMaximized(object sender, EventArgs e)
@@ -415,7 +389,7 @@ namespace WindowsFormsApplication1
             comboBox1.SelectedIndex = 1;
             scaleResize();
             this.Controls.Add(pictureBox1);
-
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void Form1_MouseWheel(object sender, MouseEventArgs e)
@@ -455,7 +429,7 @@ namespace WindowsFormsApplication1
             mouseIsOnPicBoxNumber = 4;
         }
 
-        private void clickZoom(object sender, MouseEventArgs e)
+        /*private void clickZoom(object sender, MouseEventArgs e)
         {
             PictureBox tempBox = (PictureBox)sender;
             int zoomFactor = 2;
@@ -475,19 +449,60 @@ namespace WindowsFormsApplication1
             zoomedInGraphics.Dispose();
 
             return;
-        }
+        }*/
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             pictureBox1.ImageLocation = imageList[0].ElementAt(indexList[0]);
         }
 
-        private void pictureBox1_MouseHover(object sender, MouseEventArgs e)
+        /*private void pictureBox1_MouseHover(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 clickZoom(sender, e);
             }
+        }*/
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.InitialDirectory = curDir;
+            sfd.Filter = "XML Files | *.xml";
+            sfd.DefaultExt = "xml";
+            if (sfd.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
+            Saveable sa = new Saveable();
+            sa.imageList = imageList;
+            sa.indexList = indexList;
+            XmlSerializer serializer = new XmlSerializer(typeof(Saveable));
+            using (TextWriter writer = new StreamWriter(@sfd.FileName))
+            {
+                serializer.Serialize(writer, sa);
+            }
+
+        }
+
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = curDir;
+            ofd.Filter = "XML Files | *.xml";
+            ofd.DefaultExt = "xml";
+            if (ofd.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
+            XmlSerializer deserializer = new XmlSerializer(typeof(Saveable));
+            TextReader reader = new StreamReader(@ofd.FileName);
+            object obj = deserializer.Deserialize(reader);
+            Saveable sa = (Saveable)obj;
+            reader.Close();
+            imageList = sa.imageList;
+            indexList = sa.indexList;
+            updateImages("");
         }
     }
 }
